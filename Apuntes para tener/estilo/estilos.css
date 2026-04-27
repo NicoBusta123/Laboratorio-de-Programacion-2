@@ -1,0 +1,224 @@
+/* ==========================================================================
+   CHEAT SHEET CSS - APUNTE COMPLETO PARA EXAMEN
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES Y RESET (Buena práctica inicial)
+   ========================================================================== */
+:root {
+    /* Variables: Se declaran en la raíz para usarlas en todo el doc */
+    --color-primario: #007bff;
+    --color-fondo: #f4f4f4;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --espaciado-base: 16px;
+}
+
+* {
+    /* Reset universal: quita márgenes y rellenos que el navegador pone por defecto */
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box hace que el padding y el border NO sumen al width total del elemento */
+    box-sizing: border-box; 
+}
+
+/* ==========================================================================
+   2. SELECTORES (Cómo apuntar a los elementos HTML)
+   ========================================================================== */
+p { ... }                   /* Selector de Etiqueta: Todos los <p> */
+.mi-clase { ... }           /* Selector de Clase: Elementos con class="mi-clase" */
+#mi-id { ... }              /* Selector de ID: Elemento único con id="mi-id" */
+
+div p { ... }               /* Selector Descendiente: Todos los <p> dentro de un <div> (sin importar el nivel) */
+div > p { ... }             /* Selector Hijo Directo: Solo los <p> que son hijos INMEDIATOS de un <div> */
+h1 + p { ... }              /* Selector Hermano Adyacente: El <p> que está exactamente después de un <h1> */
+h1 ~ p { ... }              /* Selector Hermano General: Todos los <p> que están después de un <h1> al mismo nivel */
+
+[type="text"] { ... }       /* Selector de Atributo: Apunta a <input type="text"> */
+
+/* ==========================================================================
+   3. MODELO DE CAJA (BOX MODEL)
+   ========================================================================== */
+.caja {
+    width: 100%;            /* Ancho (puede ser px, %, vw, rem, em) */
+    max-width: 1200px;      /* Ancho máximo permitido */
+    height: 50vh;           /* Alto (vh = 50% del alto de la ventana del navegador) */
+    
+    margin: 10px 20px 15px 5px; /* Margen externo (Arriba, Derecha, Abajo, Izquierda - Sentido reloj) */
+    margin: 0 auto;         /* Truco: Centra el elemento horizontalmente si tiene un width definido */
+    
+    padding: 20px;          /* Espacio interno (entre el contenido y el borde) */
+    
+    border: 2px solid #000; /* Borde: Grosor | Estilo (solid, dashed, dotted) | Color */
+    border-radius: 10px;    /* Redondea las esquinas */
+    
+    overflow: hidden;       /* Qué hacer si el contenido es más grande que la caja (hidden, scroll, auto, visible) */
+}
+
+/* ==========================================================================
+   4. TIPOGRAFÍA Y TEXTO
+   ========================================================================== */
+.texto {
+    font-family: var(--fuente-principal); /* Tipo de letra */
+    font-size: 2rem;        /* Tamaño (rem es relativo al tamaño base del html, suele ser 16px. 2rem = 32px) */
+    font-weight: 700;       /* Grosor (normal=400, bold=700) */
+    font-style: italic;     /* Estilo (normal, italic, oblique) */
+    
+    color: #333333;         /* Color del texto */
+    text-align: center;     /* Alineación (left, right, center, justify) */
+    text-decoration: none;  /* Decoración (none quita el subrayado de los links, underline lo pone) */
+    text-transform: uppercase; /* Transforma el texto (uppercase, lowercase, capitalize) */
+    
+    line-height: 1.5;       /* Interlineado (espacio entre renglones) */
+    letter-spacing: 2px;    /* Espacio entre letras */
+}
+
+/* ==========================================================================
+   5. FONDOS (BACKGROUNDS)
+   ========================================================================== */
+.fondo {
+    background-color: var(--color-fondo); /* Color sólido de fondo */
+    
+    background-image: url('ruta/imagen.jpg'); /* Imagen de fondo */
+    background-size: cover;     /* cover: cubre todo sin deformar / contain: se ve toda la imagen / auto */
+    background-position: center;/* Centra la imagen de fondo */
+    background-repeat: no-repeat;/* Evita que la imagen se repita si es más chica que la caja */
+    
+    /* Degradado lineal de arriba hacia abajo */
+    background: linear-gradient(to bottom, #ff0000, #0000ff); 
+}
+
+/* ==========================================================================
+   6. DISPLAY Y VISIBILIDAD
+   ========================================================================== */
+.visualizacion {
+    display: block;         /* Ocupa todo el ancho disponible (h1, p, div) */
+    display: inline;        /* Solo ocupa el ancho de su contenido, ignora width/height (span, a) */
+    display: inline-block;  /* Como inline, pero SÍ acepta width, height, margin y padding */
+    display: none;          /* Oculta el elemento, NO ocupa espacio en la pantalla */
+    
+    visibility: hidden;     /* Oculta el elemento, pero SÍ sigue ocupando su espacio original */
+    opacity: 0.5;           /* Transparencia (0.0 es invisible, 1.0 es sólido) */
+}
+
+/* ==========================================================================
+   7. FLEXBOX (Ideal para alinear elementos en 1 dimensión: Filas O Columnas)
+   ========================================================================== */
+.contenedor-flex {
+    display: flex;          /* Activa Flexbox */
+    
+    flex-direction: row;    /* Dirección principal: row (fila, default), column (columna), row-reverse, column-reverse */
+    flex-wrap: wrap;        /* Si los hijos no entran en una línea, los pasa a la de abajo (nowrap es default) */
+    
+    /* ALINEACIÓN EN EL EJE PRINCIPAL (Depende de flex-direction) */
+    justify-content: center; /* center, flex-start, flex-end, space-between (separa al máximo), space-around */
+    
+    /* ALINEACIÓN EN EL EJE TRANSVERSAL (Cruza al eje principal) */
+    align-items: center;     /* center, flex-start, flex-end, stretch (estira para llenar alto) */
+    
+    gap: 20px;              /* Espaciado perfecto entre elementos hijos */
+}
+
+.hijo-flex {
+    flex-grow: 1;           /* Cuánto crece el elemento si hay espacio libre (0 es default) */
+    flex-shrink: 0;         /* Cuánto se encoge el elemento si falta espacio (1 es default) */
+    flex-basis: 200px;      /* Tamaño ideal antes de crecer o encogerse */
+    align-self: flex-end;   /* Sobrescribe el align-items del padre solo para este hijo */
+}
+
+/* ==========================================================================
+   8. GRID (Ideal para Layouts en 2 dimensiones: Filas Y Columnas)
+   ========================================================================== */
+.contenedor-grid {
+    display: grid;          /* Activa CSS Grid */
+    
+    /* Define columnas: 3 columnas, la del medio más grande (fr = fracción) */
+    grid-template-columns: 1fr 2fr 1fr; 
+    /* Define filas: 2 filas, la primera de 100px, la segunda se ajusta al contenido */
+    grid-template-rows: 100px auto;     
+    
+    gap: 15px;              /* Espacio entre filas y columnas */
+}
+
+.hijo-grid {
+    grid-column: 1 / 3;     /* Este hijo ocupará desde la línea de columna 1 hasta la 3 (ocupa 2 columnas) */
+    grid-row: 1 / 2;        /* Este hijo ocupará la fila 1 */
+}
+
+/* ==========================================================================
+   9. POSICIONAMIENTO (Position) Y CAPAS (Z-index)
+   ========================================================================== */
+.posicion {
+    position: static;       /* Comportamiento normal (default) */
+    
+    position: relative;     /* Se mueve relativo a su posición normal. Habilita top, right, bottom, left. Es el "ancla" para los absolutos. */
+    top: 10px;              /* Lo baja 10px desde donde debería estar */
+    
+    position: absolute;     /* Se sale del flujo. Se posiciona relativo a su ancestro "relative" más cercano. */
+    right: 0;               /* Se pega al borde derecho de su padre relative */
+    
+    position: fixed;        /* Se clava en la PANTALLA. Ignora el scroll (ideal navbars o modals). */
+    bottom: 20px;
+    
+    position: sticky;       /* Es relative hasta que el scroll lo alcanza, ahí se vuelve fixed. */
+    top: 0;                 /* Se "pega" al llegar al tope de la pantalla */
+    
+    z-index: 100;           /* Controla la profundidad (capas). Números mayores tapan a los menores. Requiere position distinto a static. */
+}
+
+/* ==========================================================================
+   10. PSEUDO-CLASES (Estados)
+   ========================================================================== */
+a:hover { color: red; }             /* Cuando el mouse pasa por encima */
+input:focus { border: 1px solid blue; } /* Cuando el usuario hace clic/escribe adentro (ej: un input de formulario) */
+button:active { transform: scale(0.9); } /* El instante exacto en que se hace clic */
+
+li:first-child { font-weight: bold; } /* El primer elemento de una lista de hermanos */
+li:last-child { margin-bottom: 0; }   /* El último elemento de una lista */
+li:nth-child(even) { background: #eee; } /* Elementos pares (ideal para pintar filas de tablas alternadas) */
+
+/* ==========================================================================
+   11. PSEUDO-ELEMENTOS (Partes de un elemento o inyectar contenido)
+   ========================================================================== */
+p::first-letter { font-size: 2rem; }  /* Estila solo la primera letra */
+p::first-line { color: gray; }        /* Estila solo el primer renglón */
+
+.caja::before {
+    content: "★ ";          /* Inyecta este contenido ANTES del contenido real del elemento en el HTML */
+    color: gold;
+}
+.caja::after {
+    content: " (Fin)";      /* Inyecta este contenido DESPUÉS del contenido real */
+}
+
+/* ==========================================================================
+   12. TRANSICIONES Y SOMBRAS
+   ========================================================================== */
+.boton-animado {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra: Offset X | Offset Y | Blur | Color */
+    
+    /* Transition: Propiedad a animar | Duración | Curva de velocidad (ease, linear) | Retraso */
+    transition: background-color 0.3s ease, transform 0.2s linear;
+}
+
+/* ==========================================================================
+   13. MEDIA QUERIES (Responsive Design - Diseño adaptable a pantallas)
+   ========================================================================== */
+
+/* Todo lo que esté acá adentro SOLO se aplica si la pantalla mide 768px o menos (Tablets y celulares) */
+@media (max-width: 768px) {
+    .contenedor-grid {
+        grid-template-columns: 1fr; /* Pasa todo a 1 sola columna en el celu */
+    }
+    
+    .caja {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Todo lo que esté acá adentro SOLO se aplica si la pantalla mide 1024px o más (Monitores grandes) */
+@media (min-width: 1024px) {
+    .texto {
+        font-size: 2.5rem; /* Agranda la fuente en pantallas grandes */
+    }
+}

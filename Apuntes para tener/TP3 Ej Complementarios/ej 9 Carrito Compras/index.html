@@ -7,18 +7,25 @@
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="script.js" defer></script>
 </head>
-<body>
-  <header>
+<body class="pagina">
+  <header id="header">
     <h1 class="titulos">Mercado libre</h1>
-    <img src="carritoCompras.png" id="imgcarrito" onclick="abrirCarro()">
+      <div class="opciones">
+        <img src="carritoCompras.png" id="imgcarrito">
+      </div>
+    
   </header>
+  <section class="seccionProductos" id="seccionProductos">
+
+    
+  
+
+  </section>
+
+  <div id="overlay" class="overlay oculto"></div>
+
   <section>
-
-    <div id="seccionProductos" class="seccionProductos"> 
-        
-    </div>
-
-    <div id="seccionCarro" class="carro">
+    <div id="seccionCarro" class="carro oculto">
       <table id="carritoCompras">
         <thead>
           <tr>
@@ -30,12 +37,12 @@
 
         </tbody>
       </table>
+      <button id="cerrarCarro">Cerrar</button>
     </div>
-
   </section>
 
   <footer>
-    
+    <p id="piePagina">Todos los derechos reservados. Nicolas Bustamante 2026</p>
   </footer>
 </body>
 </html>
