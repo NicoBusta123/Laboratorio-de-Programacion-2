@@ -1,0 +1,35 @@
+
+.oculto{
+    display: none;
+}
+
+.titulos{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+
+h1{
+    text-align: center;
+    width: 100%;
+}
+
+body.juego {
+    margin: 0;
+    width: 100vw; /* 100% del ancho de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Asegúrate de que los hijos ocupen todo el ancho o se centren ellos mismos */
+header, section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

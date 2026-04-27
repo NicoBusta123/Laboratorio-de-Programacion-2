@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el numero</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body class="juego">
+  <header>
+    <h1>Adivina el numero!</h1>
+  </header>
+
+  <section>
+    <article>
+        <h3 id="mensajeNombre"></h3>
+        <input placeholder="Ingresa un numero" id="idNumero"><button id="botonAdivinar" onclick="adivinar()">Adivinar</button>
+    </article>
+
+    <article>
+        <span id="mensaje"></span>
+        <span id="mensajeCantidadGanadas"></span>
+    </article>
+
+    <article>
+        <span id="cantidadIntentos"></span><br><br>
+        <button id="botonReiniciar" onclick="reiniciarJuego()" class="oculto">Volver a Jugar</button>
+
+  </section>
+  <footer>
+    
+  </footer>
+</body>
+</html>

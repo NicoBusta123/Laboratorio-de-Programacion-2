@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPL - </title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1></h1>
+  </header>
+  <section>
+    <article id="terminoBusqueda">
+    <h1>Catalogo de Arte</h1>
+        <form id="idForm" method="post" class="formulario">
+            <h3>Introduce los terminos de busqueda</h3>
+            
+            <div class="bloque">
+                <h3>Obra de arte</h3>
+                Titulo <input id="idTitulo" type="text" name="titulo"><br>
+                Autor <input id="idAutor" type="text" name="autor"><br><br>
+            </div>
+
+            <div class="bloque" id="bloque1">
+                <h3>Tipo</h3>
+                <input type="checkbox" name="tipo" id="idEscultura" value="escultura">Escultura<br>
+                <input type="checkbox" name="tipo" id="idArquitectura" value="arquitectura">Arquitectura<br>
+                <input type="checkbox" name="tipo" id="idPintura" value="pintura" onclick="registrar()">Pintura<br><br>
+                
+            </div>
+
+            <div class="bloque">
+                <h3>Disponibilidad</h3>
+                <input type="radio" name="disponibilidad" id="idMuseo" value="publico">Museo/ Acceso Publico<br>
+                <input type="radio" name="disponibilidad" id="idPrivada" value="privada">Coleccion Privada<br><br>
+            </div>
+
+            <div class="bloque">
+                <h3>Estilo</h3>
+                <select>
+                    <option value="clasico">Clasico</option>
+                    <option value="moderno">Moderno</option>
+                </select>
+            </div>
+            <br><br>
+
+
+            <button id="idEnviar" type="submit">Enviar</button>
+        
+        </form>
+    </article>
+  </section>
+  <footer>
+    
+  </footer>
+</body>
+</html>

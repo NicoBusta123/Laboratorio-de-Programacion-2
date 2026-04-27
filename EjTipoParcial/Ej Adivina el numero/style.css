@@ -1,0 +1,50 @@
+
+.oculto{
+    display: none;
+}
+
+.titulos{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+
+h1{
+    text-align: center;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    width: 100vw; /* 100% del ancho de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+
+}
+
+/* 2. Asegúrate de que los hijos ocupen todo el ancho o se centren ellos mismos */
+header, section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,h2,h3{
+    color: rgb(73, 73, 202);
+    font-style:oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input,button{
+    border-color:rgb(95, 95, 236);
+    border-radius: 40px; /* Cuanto más alto el número, más redondo */
+    border: 1px solid #e0d1d1; /* Un borde fino para que se note el efecto */
+    padding: 8px 15px;      /* Un poco de espacio interno para que no se vea apretado */
+}

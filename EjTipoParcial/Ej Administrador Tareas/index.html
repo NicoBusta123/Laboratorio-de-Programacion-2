@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPL - </title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Administrador de tareas</h1>
+  </header>
+  <section>
+    <article>
+        
+        <div id="inicioSesion">
+            Ingresa un nombre de usuario<input id="usuario" type="text" placeholder="Usuario"><br><br>
+            <button id="botonIniciar" onclick="ingresar()">Ingresar</button>
+        </div>
+        
+        <div id="administrador" class="oculto">
+
+            <h3 id="mensajeVisitas"></h3>
+
+            <div>
+              <input id="tarea" placeholder="Ingresa una tarea "><button id="botonIngresar" onclick="ingresarTarea()">Ingresar</button>
+            </div>
+            
+
+            
+            <div id="seccionPendientes">
+              <h3>Lista de Tareas pendientes</h3>
+                <ul id="listaTareasPendientes"></ul>
+            </div>
+            
+            
+            <div id="seccionTerminadas">
+              <h3>Lista de Tareas terminadas</h3>
+                <ul id="listaTareasTerminadas"></ul>
+            </div>
+
+          
+        </div>
+      
+    </article>
+  </section>
+  <footer>
+    
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPL - </title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>SOLICITUD DE CREDITO PERSONAL</h1>
+  </header>
+  <section>
+    <article>
+        <form id="formulario" method="post" action="script.js">
+
+            <h3>Datos personales</h3>
+                <span>Ingresar nombre: </span><input type="text" id="nombre" >
+                <span>Ingresar apellido: </span><input type="text" id="apellido">
+                <span>Ingresar DNI: </span><input type="number" id="dni">
+                <span>Fecha de nacimiento: </span><input type="date" id="fechaNacimiento">
+                <span>Domicilio: </span><input type="text" id="domicilio">
+
+            <h3>Datos laborales</h3>
+                <span>Nombre de la empresa: </span><input type="text" id="empresa">
+                <span>Domicilio de la empresa: </span><input type="text" id="domEmpresa">
+                <span>Salario que percibe: </span><input type="text" id="salario">
+                <span>Fecha que ingreso a la empresa: </span><input type="date" id="fechaIngreso">
+                <span>Importe que solicita: </span><input type="number" id="importe" required> 
+
+            <button onclick="enviar()">Enviar</button>
+        </form>
+
+    </article>
+
+    <div id="mensaje">
+      
+    </div>
+  </section>
+  <footer>
+    
+  </footer>
+</body>
+</html>
