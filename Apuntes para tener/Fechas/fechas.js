@@ -66,7 +66,8 @@ console.log(fecha.toLocaleDateString('es-AR'));
 
 // Formato largo y elegante
 const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-console.log(fecha.toLocaleDateString('es-ES', opciones)); 
+console.log(fecha.toLocaleDateString('es-ES', opciones));
+console.log("jeje"); 
 // "martes, 21 de abril de 2026"
 
 
