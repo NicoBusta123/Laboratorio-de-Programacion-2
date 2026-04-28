@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titulo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1 class="titulo">Test de Aptitud</h1>
+  </header>
+
+  <main>
+    <section id="seccionPreguntas">
+      <article>
+        <form id="form">
+
+            <span>Nombre: <input type="text" name="nombre" required></span>
+            <span>Apellido: <input type="text" name="apellido" required></span>
+            <span>Edad: <input type="number" name="edad" required></span>
+            <span>Domicilio: <input type="text" name="domicilio" required></span>
+
+
+            <h3>Que ingredientes lleva un desayuno simple?</h3>
+            <span>Cafe <input type="checkbox" value="Cafe" name="desayuno"></span>
+            <span>Leche <input type="checkbox" value="Leche" name="desayuno"></span>
+            <span>Tostadas <input type="checkbox" value="Tostadas" name="desayuno"></span>
+            <span>Limon <input type="checkbox" value="Limon" name="desayuno"></span>
+            <span>Manteca <input type="checkbox" value="Manteca" name="desayuno"></span>
+            <span>Medias lunas <input type="checkbox" value="MediasLunas" name="desayuno"></span>
+            <span>Ajo <input type="checkbox" value="Ajo" name="desayuno"></span>
+        
+            
+            <h3>Que fruta seca vale de la uva?</h3>
+
+                <span>Ciruelas <input value="Ciruelas" name="fruta" type="radio"></span>
+                <span>Pasas <input value="Pasas" name="fruta" type="radio"></span>
+                <span>Anacardo <input value="Anacardo" name="fruta" type="radio"></span>
+        
+
+            <h3>Para que sirve el caldo corto?</h3>
+                <span>Para quitar la grasa de la carne <input type="radio" name="caldo" value="QuitarGrasa"></span>
+                <span>Para alimentos que necesitan poca coccion <input type="radio" name="caldo" value="PocaCoccion"></span>
+
+
+            <h3>Cual es la temperatura maxima para freir?</h3>
+                <span>180° <input type="checkbox" name="temperatura" value="180"></span>
+                <span>200° <input type="checkbox" name="temperatura" value="200"></span>
+                <span>170° <input type="checkbox" name="temperatura" value="170"></span>
+
+            <h3>Como se llama el pan sin levadura?</h3>
+                <span>Pan blanco <input type="checkbox" name="pan" value="panBlanco"></span>
+                <span>Pan germinado <input type="checkbox" name="pan" value="panGerminado"></span>
+                <span>Acimo <input type="checkbox" name="pan" value="acimo"></span>
+
+            <br><br>
+            <button type="submit" id="btnEnviar">Enviar Cuestionario</button>
+        </form>
+      </article>
+    </section>
+
+    <div id="mensaje" class="oculto">
+        <h1 class="titulo">Resultado de el cuestionario</h1>
+        <h3 id="resultado" class="titulo"></h3>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Pie de página</p>
+  </footer>
+
+</body>
+</html>
