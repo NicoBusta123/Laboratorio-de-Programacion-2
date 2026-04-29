@@ -99,11 +99,32 @@ const animales = ["perro", "gato", "loro", "pez", "tortuga"];
 const mascotasComunes = animales.slice(1, 3);
 console.log("Corte con slice(1, 3):", mascotasComunes); // ["gato", "loro"]
 
+
 // splice: Elimina o reemplaza (MUTA el arreglo original)
 // splice(inicio, cantidad_a_eliminar, items_a_insertar)
 const letras = ["a", "b", "c", "d"];
 letras.splice(1, 2, "X", "Y"); // En la pos 1, quita 2 elementos, pon X e Y
 console.log("Después de splice:", letras); // ["a", "X", "Y", "d"]
+
+
+
+
+//EXTRAIGO UN ELEMENTO 
+const frutas = ["manzana", "pera", "uva"];
+const indice = 1; // Queremos la pera
+
+const resultado = frutas.splice(indice, 1); 
+// frutas ahora es ["manzana", "uva"]
+// resultado es ["pera"] (un arreglo)
+
+const elementoExtraido = resultado[0]; 
+// elementoExtraido ahora es "pera" (el texto suelto)
+
+
+
+
+
+
 
 // Combinar arreglos (Spread Operator - Muy recomendado)
 const arr1 = [1, 2];
@@ -125,3 +146,12 @@ console.log("Sort numérico correcto:", desordenados);
 // reverse: Invierte el orden (MUTA el original)
 desordenados.reverse();
 console.log("Orden invertido:", desordenados);
+
+
+
+
+
+//SI QUIERO ELIMINAR EL ULTIMO ELEMENTO DE UNA LISTA O TABLA ME PUEDE SERVIR INSTA
+const lista = document.querySelector('ul');
+const ultimoItem = lista.lastElementChild;
+ultimoItem.remove(); // Elimina el último elemento de la lista   

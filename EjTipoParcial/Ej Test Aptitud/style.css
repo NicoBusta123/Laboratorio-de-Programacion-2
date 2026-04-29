@@ -1,7 +1,21 @@
 .titulo{
     text-align: center;
+
+
 }
 
 .oculto{
     display: none;
+}
+
+.form{
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: 'Times New Roman', Times, serifS;
+    border-style:solid;
+}
+
+body{
+    background-color: rgb(234, 232, 238);
 }

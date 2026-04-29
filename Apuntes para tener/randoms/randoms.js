@@ -22,3 +22,16 @@ const indiceAleatorio = Math.floor(Math.random() * colores.length);
 const colorElegido = colores[indiceAleatorio];
 
 console.log(colorElegido); // Devuelve un color al azar
+
+
+//Mezclar arreglo
+function mezclar(arreglo) {
+  for (let i = arreglo.length - 1; i > 0; i--) {
+    // Elegimos un índice aleatorio entre 0 e i
+    const j = Math.floor(Math.random() * (i + 1));
+    
+    // Intercambiamos los valores (usando desestructuración)
+    [arreglo[i], arreglo[j]] = [arreglo[j], arreglo[i]];
+  }
+  return arreglo;
+}

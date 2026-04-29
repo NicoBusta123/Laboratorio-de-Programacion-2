@@ -1,0 +1,49 @@
+.carta{
+    border-width: 2px;
+    border-style: solid;
+    width: 100px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+    
+    
+}
+
+.contenidoOculto{
+    content-visibility: hidden;
+}
+
+
+.clickeable{
+    cursor: pointer;
+     /*no es necesario para que sea clickeable, pero es para saber que se puede clickear*/
+}
+
+.cartaAcertada{
+    cursor: default;
+    background-color: green;
+}
+
+.contenedorCartas{
+    display: grid;
+  
+  /* Acá le decimos que queremos 4 columnas. 
+     '1fr' significa que cada columna ocupa 1 fracción (el mismo ancho) */
+  grid-template-columns: repeat(4, 1fr); 
+  
+  /* Opcional: Le decimos que queremos 3 filas de 150px de alto */
+  grid-template-rows: repeat(3, 150px);
+  
+  /* gap es el espacio que va a haber entre las cartas (el "pasillo") */
+  gap: 15px; 
+  
+  /* Para que el tablero no se estire por toda la pantalla y quede centrado */
+  max-width: 500px;
+  margin: 40px auto;
+
+
+}
+
+#titulo{
+    text-align: center;
+}
