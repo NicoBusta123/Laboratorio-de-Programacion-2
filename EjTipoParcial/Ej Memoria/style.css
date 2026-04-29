@@ -47,3 +47,7 @@
 #titulo{
     text-align: center;
 }
+
+.juego{
+    display: none;
+}

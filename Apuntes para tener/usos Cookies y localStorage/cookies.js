@@ -16,53 +16,30 @@ document.cookie = "preferencias=" + encodeURIComponent(objetoEnTexto) + ";path=/
 
 
 
-//ALGO ASI PUEDE SER CREAR UNA COOKIE BIEN CHUPETE!
-function crearCookie(nombre, valor, dias) {
-    const segundos = dias * 24 * 60 * 60;
-    document.cookie = `${nombre}=${valor}; max-age=${segundos}; path=/`;
-}
-
-// Uso: Crear una cookie que dure 7 días
-crearCookie("preferencia", "modo-oscuro", 7);
-
-
 
 
 //FUNCION PARA SETEAR COOKIE BIEN CHUPETE
-function setCookie(nombre, valor, dias) {
-    // 1. Calculamos los segundos
-    const segundos = dias * 24 * 60 * 60;
-    
-    // 2. Armamos la cookie con esteroides (Segura y fácil)
-    document.cookie = `${nombre}=${encodeURIComponent(valor)}; max-age=${segundos}; path=/`;
-    
-    console.log(`Cookie '${nombre}' guardada por ${dias} días.`);
+function setCookie(nombre, valor) {
+    // max-age=31536000 equivale a 1 año aproximadamente
+    document.cookie = nombre + "=" + valor + "; max-age=31536000; path=/";
+    console.log("Cookie guardada.");
 }
 
 // Ejemplo de uso:
 setCookie("idioma", "es-AR", 30); // Dura un mes
 
 
-
+//Obtengo el valor de la cookie
 function getCookie(nombre) {
-    // 1. Preparamos lo que vamos a buscar (ej: "usuario=")
     let nombreBusqueda = nombre + "=";
-    
-    // 2. Limpiamos espacios y dividimos el string por los puntos y coma
     let cookiesSeparadas = document.cookie.split(';');
     
-    // 3. Recorremos cada trozo
     for (let i = 0; i < cookiesSeparadas.length; i++) {
-        let c = cookiesSeparadas[i].trim(); // Quitamos espacios sobrantes
-        
-        // 4. Si encontramos el nombre al principio del trozo...
+        let c = cookiesSeparadas[i].trim();
         if (c.indexOf(nombreBusqueda) === 0) {
-            // 5. Devolvemos el valor decodificado
-            return decodeURIComponent(c.substring(nombreBusqueda.length, c.length));
+            return c.substring(nombreBusqueda.length, c.length);
         }
     }
-    
-    // 6. Si no encontramos nada, devolvemos null
     return null;
 }
 

@@ -14,9 +14,21 @@
   </header>
 
   <main>
-    <section >
+
+    <div id="inicioSesion">
+      <form id="form">
+        <span>Ingresar nombre de usuario <input id="usuario" type="text" required></span>
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+
+    <section class="juego" id="juego" >
+      <h3 id="mensajeUsuario"></h3>
       <div class="contenedorCartas" id="contenedorCartas"></div>
     </section>
+
+    <h3 id="mensajeGanador"></h3>
+
   </main>
 
   <footer>

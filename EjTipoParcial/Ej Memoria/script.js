@@ -2,10 +2,24 @@
 
 let numeros = [1,1,2,2,3,3,4,4,5,5,6,6];
 
+//Hago esto, ya que al usar splice, el arreglo original numeros lo voy modificando
+// y necesito comparar la cantidad de aciertos con el total original xd
+let totalNumeros = numeros.length;
+
 
 const contenedor = document.getElementById('contenedorCartas');
 
 let numerosClickeados = 0;
+
+
+let cantidadAdivinadas = [];
+
+let form = document.getElementById('form');
+
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    ingresar();
+})
 
 
 
@@ -51,6 +65,9 @@ while(numeros.length > 0){
                 primerCarta.classList.remove('revelada');
                 segundaCarta.classList.remove('revelada');
                 numerosClickeados = 0; // RECIÉN ACÁ RESETEAMOS
+                cantidadAdivinadas.push(primerCarta.dataset.numero);
+                cantidadAdivinadas.push(segundaCarta.dataset.numero);
+                verificarGanador();
             } else {
                 // NO COINCIDEN. Usamos un pequeño delay para que el usuario las vea
                 setTimeout(() => {
@@ -69,6 +86,47 @@ while(numeros.length > 0){
 
 
 }
+
+function ingresar(){
+    let inicioSesion = document.getElementById('inicioSesion');
+    inicioSesion.classList.add('juego');
+    let juego = document.getElementById('juego');
+    juego.classList.remove('juego');
+
+    let nombreUsuario = document.getElementById('usuario').value.trim();
+    document.cookie = `usuario=${nombreUsuario}`+"; max-age=3000000; path=/";
+
+    let mensajeNombre = document.getElementById('mensajeUsuario').textContent="Bienvenido "+ nombreUsuario+"!!";
+}
+
+function getCookie(nombre) {
+    let nombreBusqueda = nombre + "=";
+    let cookiesSeparadas = document.cookie.split(';');
+    
+    for (let i = 0; i < cookiesSeparadas.length; i++) {
+        let c = cookiesSeparadas[i].trim();
+        if (c.indexOf(nombreBusqueda) === 0) {
+            return c.substring(nombreBusqueda.length, c.length);
+        }
+    }
+    return null;
+}
+
+function verificarGanador(){
+    if (cantidadAdivinadas.length === totalNumeros){
+        let juego = document.getElementById('juego');
+        juego.classList.add('juego');
+        let cantidadGanadas = parseInt(getCookie("cantidadGanadas")) || 0;
+        cantidadGanadas++;
+        document.cookie = `cantidadGanadas=${cantidadGanadas}`+"; max-age=3000000; path=/";
+        console.log(getCookie("cantidadGanadas"));
+        document.getElementById('mensajeGanador').textContent = "Haz ganado un total de "+cantidadGanadas+" partidas!";
+
+
+    }
+}
+
+
 
 
 
