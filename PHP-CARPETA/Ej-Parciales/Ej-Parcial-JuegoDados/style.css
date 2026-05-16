@@ -1,0 +1,8 @@
+.titulo{
+    text-align: center;
+}
+
+.tablaJuego{
+    display: grid;
+    grid-template-columns: 5,1fr;
+}
