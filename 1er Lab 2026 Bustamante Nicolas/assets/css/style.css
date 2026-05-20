@@ -1,0 +1,35 @@
+.oculto{
+    display: none;
+}
+
+.form{
+    text-align:left;
+    margin-left: 40%;
+    margin-right: 30%;
+    font-family: 'Times New Roman', Times, serifS;
+
+}
+
+.titulo{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(143, 195, 238);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.pasaporte{
+    margin-left: 30%;
+}
+
+#botonVolver{
+    border-style: solid;
+
+}

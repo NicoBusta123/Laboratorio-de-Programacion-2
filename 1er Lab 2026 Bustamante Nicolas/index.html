@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1er Lab 2026 Bustamante Nicolas </title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="text/javascript" src="assets/js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="titulo">Formulario de Pasaporte</h1>
+  </header>
+  <section id="seccionForm" class="form">
+    <form id="form" >
+        <span>Ingrese su nombre <input id="nombre" type="text" required></span><br><br>
+        <span>Ingrese su apellido <input id="apellido" type="text" required></span><br><br>
+        <span>Numero de documento <input id="documento" type="number" required></span><br><br> 
+        <span>Ingrese su fecha de nacimiento: <input id="fechaNacimiento" type="date" required></span><br><br>
+        <h3>Genero: </h3>
+            <span>Masculino <input value="Masculino" name="genero" type="radio" required></span>
+            <span>Femenino <input value="Femenino" name="genero" type="radio" required></span>
+            <span>Indistinto <input value="Indistinto" name="genero" type="radio" required></span>
+        <br><br>
+
+        <h3>Pais de origen:</h3>
+            <span>Argentina <input value="Argentina" name="pais" type="radio" required></span>
+            <span>Brasil <input value="Brasil" name="pais" type="radio" required></span>
+            <span>Chile <input value="Chile" name="pais" type="radio" required></span>
+            <span>Colombia <input value="Colombia" name="pais" type="radio" required></span>
+            <span>Peru <input value="Peru" name="pais" type="radio" required></span>
+            <span>Uruguay<input value="Uruguay" name="pais" type="radio" required></span>
+            
+        <h3>Renueva pasaporte</h3>
+            <span>Si <input value="si" type="radio" name="renueva"></span>
+            <span>No <input value="no" type="radio" name="renueva"></span>
+        
+        <br><br>
+        <button onclick="enviar()" type="submit">GenerarPasaporte</button>
+        
+    </form>
+  </section>
+
+
+  <footer>
+    
+  </footer>
+</body>
+</html>
