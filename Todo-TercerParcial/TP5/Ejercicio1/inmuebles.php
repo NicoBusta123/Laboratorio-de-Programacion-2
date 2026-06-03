@@ -9,27 +9,34 @@ if (isset ($_POST['btnIngresar'])){
     $cantidad_baños = $_POST['cantidad_baños'];
     $observaciones = $_POST['observaciones'];
 
-    $query = "INSERT INTO inmobiliaria (tipo_inmueble,domicilio,cantidad_dormitorios,mejoras,cantidad_baños,observaciones) ";
+    $query = "INSERT INTO inmueble (tipoInmueble,domicilio,cantidadDormitorios,mejoras,cantidadBanios,observacion) ";
     
     $query.= "VALUES (";
-    $query.= ;
+    $query.= "'$tipo_inmueble',";
+    $query.= "'$domicilio',";
+    $query.= "'$cantidad_dormitorios',";
+    $query.= "'$mejoras',";
+    $query.= "'$cantidad_baños',";
+    $query.= "'$observaciones'";
     $query.= ")";
 
-    $con->query($query) or die("No se pudo completar la consulta de insertar el inmueble");
+    $con->query($query) or die("Error al insertar el inmueble: " . $con->error);
     echo "El inmueble fue dado de alta!";
 
-    $queryMostrar = "SELECT tipo_inmueble, domicilio, cantidad_dormitorios, mejoras, cantidad_baños, observaciones from inmobiliaria";
+    $queryMostrar = "SELECT tipoInmueble, domicilio, cantidadDormitorios, mejoras, cantidadBanios, observacion from inmueble";
     $resultado = $con->query($queryMostrar) or die("No se pudo completar la consulta de mostrar");
+    echo "<h3>Estos son los inmuebles encontrados</h3>";
+    echo "<hr>";
 
     while ($registro = $resultado->fetch_object()){
-        echo "<h3>Estos son los inmuebles encontrados</h3>";
-        echo "<hr>";
-        echo "<h3>Tipo de inmueble: ".$registro->tipo_inmueble."<h3><br><br>";
+        
+        
+        echo "<h3>Tipo de inmueble: ".$registro->tipoInmueble."<h3><br><br>";
         echo "<h3>Domicilio: ".$registro->domicilio."<h3><br><br>";
-        echo "<h3>Cantidad de dormitorios: ".$registro->cantidad_dormitorios."<h3><br><br>";
+        echo "<h3>Cantidad de dormitorios: ".$registro->cantidadDormitorios."<h3><br><br>";
         echo "<h3>Mejoras: ".$registro->mejoras."<h3><br><br>";
-        echo "<h3>Cantidad de baños: ".$registro->cantidad_baños."<h3><br><br>";
-        echo "<h3>Observaciones: ".$registro->observaciones."<h3><br><br>";
+        echo "<h3>Cantidad de baños: ".$registro->cantidadBanios."<h3><br><br>";
+        echo "<h3>Observaciones: ".$registro->observacion."<h3><br><br>";
         echo "<hr>";
     }
     echo "<a href='inmuebles.php'>Volver</a>";
