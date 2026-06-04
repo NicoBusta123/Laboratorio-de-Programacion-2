@@ -1,35 +1,226 @@
-.oculto{
-    display: none;
+/* =========================================================================
+   1. RESETEO Y CONFIGURACIÓN GENERAL
+   ========================================================================= */
+* {
+    margin: 0;             /* Elimina el espacio exterior que los navegadores traen por defecto */
+    padding: 0;            /* Elimina el espacio interior por defecto */
+    box-sizing: border-box; /* Por qué: Asegura que el padding y los bordes no sumen tamaño extra al ancho del elemento */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Define una tipografía moderna, limpia y legible */
 }
 
-.form{
-    text-align:left;
-    margin-left: 40%;
-    margin-right: 30%;
-    font-family: 'Times New Roman', Times, serifS;
-
+body {
+    background-color: #f4f6f9; /* Color gris claro de fondo para que la pantalla no canse la vista */
+    color: #333333;            /* Color gris oscuro para el texto principal (mejor contraste que el negro puro) */
+    line-height: 1.6;          /* Separa las líneas de texto para mejorar la lectura */
+    display: flex;             /* Activa Flexbox para controlar la distribución de la página */
+    flex-direction: column;    /* Ordena los elementos hijos (header, section) uno abajo del otro */
+    min-height: 100vh;         /* Fuerza al body a ocupar como mínimo el 100% de la altura de la pantalla */
+    align-items: center;       /* Centra horizontalmente todo el contenido (formularios y cajas) */
+    padding: 20px;             /* Deja un margen de seguridad en los bordes de la pantalla (ideal para celulares) */
 }
 
-.titulo{
-    text-align: center;
+/* =========================================================================
+   2. ESTRUCTURA Y CONTENEDORES (Header, Section)
+   ========================================================================= */
+header {
+    width: 100%;               /* Ocupa todo el ancho disponible... */
+    max-width: 650px;          /* ...pero se planta en un máximo de 650px para que no se desarme en monitores grandes */
+    margin-bottom: 20px;       /* Separa el menú superior del formulario de abajo */
+    text-align: center;        /* Centra textos o elementos alineables dentro del header */
 }
 
-body{
-    background-color: rgb(143, 195, 238);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+/* Barra de navegación superior (Donde están los botones: Reportes, Verificar, Salir) */
+header .form {
+    display: flex;             /* Pone los botones uno al lado del otro en la misma fila */
+    justify-content: space-between; /* Distribuye los botones dejando el mismo espacio entre ellos */
+    gap: 10px;                 /* Fuerza una separación exacta de 10px entre botón y botón */
+    background: #ffffff;       /* Fondo blanco para que resalte sobre el fondo gris del body */
+    padding: 12px;             /* Espacio interno para que los botones no toquen los bordes de la barra */
+    border-radius: 8px;        /* Bordes redondeados para una estética más suave y moderna */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra muy sutil para dar efecto de elevación */
 }
 
-img{
-    width: 50px;
-    height: 50px;
+/* Contenedor principal de los formularios y del reporte */
+section {
+    width: 100%;               /* Ocupa todo el ancho disponible en pantallas chicas */
+    max-width: 650px;          /* Mantiene la misma simetría de 650px que el header */
+    background: #ffffff;       /* Fondo blanco tipo "tarjeta" o hoja de papel */
+    padding: 30px;             /* Espacio interno generoso para que los formularios respiren */
+    border-radius: 12px;       /* Bordes redondeados más pronunciados para el bloque principal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más visible para separar el contenido del fondo */
+    margin-bottom: 30px;       /* Margen inferior por si hay elementos debajo */
 }
 
-.pasaporte{
-    margin-left: 30%;
+/* =========================================================================
+   3. TIPOGRAFÍA Y TÍTULOS
+   ========================================================================= */
+.titulo {
+    color: #1e3a8a;            /* Color azul oscuro institucional/gubernamental */
+    font-size: 24px;           /* Tamaño jerárquico grande para el título principal */
+    font-weight: 600;          /* Grosor de letra semi-negrita */
+    margin-bottom: 25px;       /* Separa el título del primer campo del formulario */
+    text-align: center;        /* Centra el título del formulario */
+    border-bottom: 2px solid #e2e8f0; /* Línea decorativa inferior de separación */
+    padding-bottom: 10px;      /* Espacio entre el texto del título y la línea decorativa */
 }
 
-#botonVolver{
-    border-style: solid;
+h3 {
+    color: #2d3748;            /* Color gris azulado para los subtítulos (Género, País, etc.) */
+    font-size: 16px;           /* Tamaño intermedio */
+    margin-bottom: 8px;        /* Separa el subtítulo de sus opciones de abajo */
+    font-weight: 600;          /* Letra en negrita para destacar el campo */
+}
 
+/* =========================================================================
+   4. ELEMENTOS DE FORMULARIO (Inputs, Radios y Etiquetas)
+   ========================================================================= */
+form span {
+    display: block;            /* Por qué: Obliga a cada etiqueta de texto a comportarse como un bloque */
+    font-weight: 500;          /* Texto medianamente grueso */
+    margin-bottom: 8px;        /* Empuja el input hacia abajo para que no queden pegados */
+    color: #4a5568;            /* Gris intermedio para las etiquetas */
+}
+
+/* Inputs de texto, número, contraseña y selectores de fecha */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;               /* Hace que las cajas de texto ocupen el 100% del ancho del formulario */
+    padding: 10px 12px;        /* Espacio interno para que el texto que escribe el usuario no toque los bordes */
+    border: 1px solid #cbd5e1; /* Borde fino gris claro */
+    border-radius: 6px;        /* Esquinas de las cajas ligeramente redondeadas */
+    background-color: #fff;    /* Fondo blanco para la escritura */
+    color: #334155;            /* Color del texto que digita el usuario */
+    font-size: 15px;           /* Tamaño de fuente cómodo para leer y escribir */
+    transition: all 0.3s ease; /* Por qué: Suaviza la animación cuando el usuario hace clic en el campo */
+    margin-top: 4px;           /* Separa sutilmente la caja de la frase que la identifica arriba */
+}
+
+/* Efecto cuando el usuario hace clic o está parado dentro de una caja de texto (Focus) */
+input:focus {
+    outline: none;             /* Elimina el borde azul/negro feo que los navegadores ponen por defecto */
+    border-color: #3b82f6;     /* Cambia el color del borde a un azul brillante */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); /* Crea un aura azulada semitransparente alrededor de la caja */
+}
+
+/* Agrupación visual para las opciones redondas (Radio Buttons) */
+h3 + span, 
+span + span {
+    display: inline-flex;      /* Por qué: Permite que las opciones (ej: Masculino, Femenino) se acomoden de corrido a los lados */
+    align-items: center;       /* Centra verticalmente el circulito con el texto del radio */
+    margin-right: 15px;        /* Deja un espacio a la derecha antes de pasar a la siguiente opción */
+    margin-top: 5px;           /* Separa el grupo de opciones del elemento superior */
+    cursor: pointer;           /* Convierte el cursor en "mano" para indicar que es clickeable */
+    font-weight: 400;          /* Letra normal (no negrita) para las opciones */
+}
+
+/* El componente circular del Radio Button propiamente dicho */
+input[type="radio"] {
+    margin-right: 6px;         /* Separa el círculo del texto que lo acompaña */
+    width: 16px;               /* Ancho fijo para el círculo */
+    height: 16px;              /* Alto fijo para el círculo */
+    accent-color: #1e3a8a;     /* Por qué: Cambia el color del punto de selección interno al azul de tu diseño */
+}
+
+/* Líneas divisorias horizontales (<hr>) */
+hr {
+    border: 0;                 /* Quita el borde nativo del navegador */
+    height: 1px;               /* Define un grosor fino de un píxel */
+    background: #e2e8f0;       /* Color gris suave para la línea */
+    margin: 20px 0;            /* Separa la línea 20px arriba y 20px abajo respecto a otros elementos */
+}
+
+/* =========================================================================
+   5. BOTONES Y ENLACES
+   ========================================================================= */
+/* Botones principales de acción (ej: Ingresar, Generar Pasaporte, Verificar) */
+button {
+    width: 100%;               /* Por defecto en los formularios ocupan todo el ancho disponible */
+    background-color: #1e3a8a; /* Color de fondo azul oscuro */
+    color: #ffffff;            /* Texto en color blanco para asegurar máxima legibilidad */
+    border: none;              /* Elimina el borde gris clásico de los botones HTML nativos */
+    padding: 12px 20px;        /* Relleno para que el botón sea grande y fácil de presionar */
+    font-size: 16px;           /* Tamaño de texto destacado */
+    font-weight: 500;          /* Letra un poco más gruesa */
+    border-radius: 6px;        /* Esquinas del botón suavizadas */
+    cursor: pointer;           /* Transforma el cursor en "mano" al pasar por encima */
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Transición suave para los efectos hover/active */
+    margin-top: 10px;          /* Separa el botón del último campo del formulario */
+}
+
+/* Efecto cuando pasas el mouse por arriba de un botón principal */
+button:hover {
+    background-color: #1d4ed8; /* El azul se vuelve un poco más claro/vivo */
+}
+
+/* Efecto cuando haces clic físico en el botón */
+button:active {
+    transform: scale(0.98);    /* Por qué: Hace una micro-escala hacia abajo simulando que el botón se hunde */
+}
+
+/* Botones especiales ubicados dentro de la barra superior (Header) */
+header button {
+    width: auto;               /* No ocupan el 100%, su tamaño depende de su propio texto */
+    flex: 1;                   /* Por qué: Distribuye de manera equitativa el ancho entre los tres botones del menú */
+    padding: 8px 15px;         /* Padding más compacto porque son botones secundarios de navegación */
+    font-size: 14px;           /* Letra un poco más pequeña */
+    margin-top: 0;             /* Resetea el margen de arriba ya que están alineados en el menú */
+    background-color: #f1f5f9; /* Color gris muy claro (baja prioridad visual) */
+    color: #334155;            /* Texto gris oscuro */
+    border: 1px solid #e2e8f0; /* Borde gris sutil para delimitar el botón */
+}
+
+header button:hover {
+    background-color: #e2e8f0; /* Se oscurece un poco al pasar el mouse */
+}
+
+/* Estilo exclusivo para el botón "Salir" del menú */
+header button[name="btnSalir"] {
+    background-color: #fef2f2; /* Fondo rojizo muy suave que denota advertencia/cierre */
+    color: #dc2626;            /* Texto rojo fuerte */
+    border-color: #fee2e2;     /* Borde combinado con el fondo */
+}
+
+header button[name="btnSalir"]:hover {
+    background-color: #fee2e2; /* Se intensifica el fondo rojo al pasar el mouse */
+}
+
+/* Enlaces de redirección estilizados (El botón "Volver" creado con etiqueta <a>) */
+a {
+    display: inline-block;     /* Permite aplicarle márgenes y paddings como si fuera un bloque */
+    text-decoration: none;     /* Quita el subrayado azul clásico de los enlaces web */
+    background-color: #64748b; /* Color gris pizarra secundario */
+    color: white;              /* Texto blanco */
+    padding: 10px 20px;        /* Tamaño del botón de retorno */
+    border-radius: 6px;        /* Bordes redondeados */
+    font-size: 14px;           /* Tamaño de texto moderado */
+    font-weight: 500;          /* Grosor medio */
+    text-align: center;        /* Centra el texto interno */
+    transition: background-color 0.2s ease; /* Suavizado al cambiar de color */
+    margin-top: 15px;          /* Separa el enlace del contenido superior */
+}
+
+a:hover {
+    background-color: #475569; /* El gris se vuelve más oscuro al pasar el cursor */
+}
+
+/* Mensajes informativos de texto (ej: "No hay pasaportes generados aún") */
+p {
+    text-align: center;        /* Centra el texto de alerta */
+    color: #64748b;            /* Color gris apagado */
+    font-style: italic;        /* Letra cursiva para diferenciarlo de los datos reales */
+    margin: 20px 0;            /* Margen simétrico arriba y abajo */
+}
+
+/* =========================================================================
+   6. ESPECÍFICOS DE LA PÁGINA DE REPORTES
+   ========================================================================= */
+/* Formato estructural para cada bloque individual de pasaporte impreso */
+.tarjeta-pasaporte h3 {
+    margin-bottom: 6px;        /* Separa cada línea de datos internamente */
+    border-bottom: 1px dashed #f1f5f9; /* Coloca una línea punteada muy suave debajo de cada dato */
+    padding-bottom: 4px;       /* Espacio entre el texto del dato y su línea punteada */
+    display: flex;             /* Activa flexbox para la fila del reporte */
+    justify-content: space-between; /* Por qué: Alinea el título (ej: Nombre:) a la izquierda y el valor PHP a la derecha limpia */
 }
