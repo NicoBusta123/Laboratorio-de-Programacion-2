@@ -45,7 +45,7 @@ if (isset($_POST['btnVerificar'])) {
 }
 
 if (isset($_POST['btnReportes'])) {
-    header("Location: pasaportes.php");
+    header("Location: tickets.php");
     exit;
 }
 ?>
