@@ -19,7 +19,6 @@
                 <?php
                 $resultado = $conexion->query("SELECT id_pais, nombre_pais FROM paises");
                 while ($fila = $resultado->fetch_object()) {
-                    // Accedemos a las propiedades con "->"
                     echo "<option value='" . $fila->id_pais . "'>" . $fila->nombre_pais . "</option>";
                 }
     ?>
