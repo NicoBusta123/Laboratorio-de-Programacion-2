@@ -1,6 +1,8 @@
 function buscarProducto(){
     var nombreProducto = document.getElementById("nombreProducto").value.trim();
     var productos = document.getElementById("opcionesProductos");
+
+    productos.innerHTML = "";
     
     var peticion = new XMLHttpRequest();
 
@@ -12,7 +14,9 @@ function buscarProducto(){
 
             datos.forEach(producto => {
                 var option = document.createElement("option");
-                option.innerHTML = datos.descripcion;
+                option.innerHTML = producto.descripcion;
+                option.value = producto.nroProducto;
+                productos.appendChild(option);
             });
         }
 
