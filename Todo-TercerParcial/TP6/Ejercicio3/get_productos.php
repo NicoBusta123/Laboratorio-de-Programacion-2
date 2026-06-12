@@ -1,16 +1,17 @@
 <?php
 include_once "conexion.php";
+include_once "producto.php";
 
 $nombreProducto = $_GET['nombreProducto'] ?? '';
 
 $listaProductos = [];
 
 if (!empty($nombreProducto)){
-    $consulta = "SELECT nroProducto, descripcion from producto WHERE descripcion LIKE '%$nombreProducto%'";
+    $consulta = "SELECT nroProducto, descripcion, precio, stock from producto WHERE descripcion LIKE '%$nombreProducto%'";
     $resultadoBD = $conexion->query($consulta);
 
 
-    while ($fila = $resultadoBD->fetch_object()){
+    while ($fila = $resultadoBD->fetch_object('Producto')){
         $listaProductos[] = $fila;
     }
 
