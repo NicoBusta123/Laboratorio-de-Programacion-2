@@ -26,7 +26,7 @@ if(isset($_POST['btnGenerar'])){
     if ($_POST['vehiculo'] == "auto"){
         $_SESSION['cantidadauto']= ($_SESSION['cantidadauto'] ?? 0) + 1;
     }
-    if ($_POST['vehiculo'] == "moto"){
+    if ($_POST['vehiculo'] == "camioneta"){
         $_SESSION['cantidadcamioneta']= ($_SESSION['cantidadcamioneta'] ?? 0) + 1;
     }
 
