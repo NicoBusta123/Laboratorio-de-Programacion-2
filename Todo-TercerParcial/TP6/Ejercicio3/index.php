@@ -18,8 +18,21 @@
     </article>
 
     <article>
-        <select id="opcionesProductos">
+        <select id="opcionesProductos" onchange="mostrarDetalles()">
         </select>
+
+        <h3 id="precioProducto"></h3>
+        <h3 id="stockProducto"></h3>
+
+        <div id="seccionComprar" class="hidden">
+          <label>Cantidad a comprar:</label><input id="cantidad" type="number" onchange="mostrarTotal()">
+          <h3 id="importeTotal"></h3>
+
+
+        </div>
+       
+
+
     </article>
   </section>
   <footer>
