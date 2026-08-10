@@ -6,7 +6,7 @@ class Turno{
     private $dni;
     private $servicio;
     private $obraSocial;
-    private $r
+    private $total;
 
     public function __construct($nombre,$apellido,$dni,$servicio,$obraSocial)
     {
@@ -15,13 +15,28 @@ class Turno{
         $this->dni = $dni;
         $this->servicio = $servicio;
         $this-> obraSocial = $obraSocial;
+        $this->total = $this->calcularCosto();
     }
 
     public function calcularCosto(){
+        $costo = 0;
         switch ($this->servicio){
             case "ortodoncia":
-                $this->
+                $costo = 4000;
+                break;
+            case "implantes":
+                $costo = 7000;
+                break;
+            case "odontoPediatria":
+                $costo = 3000;
+                break;
         }
+
+        if ($this->obraSocial == "si"){
+            $costo -= $costo * 0.20;
+        }
+
+        return $costo;
     }
 
 
@@ -40,7 +55,14 @@ class Turno{
     public function getObraSocial(){
         return $this->obraSocial;
     }
+    
+    public function getTotal(){
+        return $this->total;
+    }
 
+    public function getServicio(){
+        return $this->servicio;
+    }
 
 
 }

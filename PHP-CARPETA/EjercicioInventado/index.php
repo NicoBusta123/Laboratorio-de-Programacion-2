@@ -1,11 +1,25 @@
 <?php
 
-include_once "turno";
+include_once "turno.php";
 session_start();
 
 if (isset($_POST['btnEnviar'])){
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $dni = $_POST['dni'];
+    $servicio = $_POST['servicio'];
+    $obraSocial = $_POST['obraSocial'];
+
+    $turno = new Turno($nombre,$apellido,$dni,$servicio,$obraSocial);
+
+    $_SESSION['turnos'][] = $turno;
 
 }
+
+if(isset($_POST['btnVerTurnos'])){
+  header("Location: dashboard.php");
+}
+
 
 ?>
 
@@ -19,16 +33,16 @@ if (isset($_POST['btnEnviar'])){
 </head>
 <body>
   <header>
-    <h1 id="idTitulo">Ingrese sus datos</h1>
+    <h1 class="titulo">Ingrese sus datos</h1>
   </header>
 
-  <section>
-    <form action="index.php" method="post">
+  <section class="seccionForm">
+    <form action="index.php" method="post" class="form">
         <span>Nombre</span><input name="nombre" type="text" required>
         <span>Apellido</span><input name="apellido" type="text" required>
         <span>DNI</span><input name="dni" type="number" required>
         <label>Servicios: </label>
-        <select name="servicios[]">
+        <select name="servicio">
             <option value="ortodoncia">Ortodoncia</option>
             <option value="implantes">Implantes</option>
             <option value="odontoPediatria">OdontoPediatria</option>
@@ -40,10 +54,17 @@ if (isset($_POST['btnEnviar'])){
         <button type="submit" name="btnEnviar">Enviar</button>
 
     </form>
+
+    <label>Quieres ver los turnos ingresados?</label>
+      <form name="form" action="index.php" method="post" class="form">
+          <button type="submit" name="btnVerTurnos">Ver turnos</button>
+      </form>
   </section>
 
+  
+
   <footer>
-    
+    <p>Nicolas Bustamante</p>
   </footer>
 </body>
 </html>

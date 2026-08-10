@@ -1,0 +1,209 @@
+/* ==========================================================
+   1. RESET GLOBAL Y DISEÑO DE LA PÁGINA (BODY Y HEADER)
+   ========================================================== */
+
+/* Selector universal (*) o body: Define las reglas generales de toda la página web.
+*/
+body {
+    /* font-family: Define la tipografía que se usará en el texto. Se ponen varias de respaldo por si el navegador no tiene la primera. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* background-color: Establece un color de fondo gris claro para toda la pantalla, haciendo la interfaz más agradable a la vista. */
+    background-color: #f4f6f9;
+    
+    /* color: Define el color del texto predeterminado (un gris oscuro/negro suave para que la lectura sea cómoda). */
+    color: #333;
+    
+    /* margin y padding en 0: Eliminan los márgenes y rellenos por defecto que los navegadores web le agregan al body automáticamente. */
+    margin: 0;
+    padding: 0;
+    
+    /* display: flex; Convierte al body en un contenedor flexible para poder alinear y ordenar sus elementos internos fácilmente. */
+    display: flex;
+    
+    /* flex-direction: column; Organiza los elementos hijos del body (header, main, footer) en forma de columna (uno debajo del otro). */
+    flex-direction: column;
+    
+    /* align-items: center; Centra horizontalmente todos los elementos que están dentro del body. */
+    align-items: center;
+    
+    /* min-height: 100vh; Obliga a que la página ocupe como mínimo el 100% de la altura de la pantalla visible (Viewport Height). */
+    min-height: 100vh;
+}
+
+/* Estilo para la barra de cabecera superior (<header>)
+*/
+header {
+    /* background-color: Pinta el fondo del header de un color azul institucional llamativo. */
+    background-color: #007bff;
+    
+    /* color: Pone el texto del header en color blanco para que contraste perfectamente con el fondo azul. */
+    color: white;
+    
+    /* width: 100%; Hace que el header ocupe todo el ancho disponible de la pantalla. */
+    width: 100%;
+    
+    /* text-align: center; Centra el texto o los títulos que se encuentren dentro del header. */
+    text-align: center;
+    
+    /* padding: Añade un espacio de relleno interno arriba/abajo (20px) e izquierda/derecha (0). Evita que el texto quede pegado a los bordes. */
+    padding: 20px 0;
+    
+    /* box-shadow: Añade una sombra sutil y elegante en la parte inferior del header para darle profundidad visual. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* margin-bottom: Deja un espacio libre de separación debajo del header antes de que empiece el formulario. */
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================================
+   2. CONTENEDOR DE LA SECCIÓN Y FORMULARIO (.seccionForm y .form)
+   ========================================================== */
+
+/* Clase que envuelve al formulario en la pantalla para darle forma de "tarjeta"
+*/
+.seccionForm {
+    /* background: white; Pone el fondo del contenedor en blanco para que resalte sobre el fondo gris de la página. */
+    background: white;
+    
+    /* padding: Relleno interno general de 30px en todos los lados. Separa los bordes internos de los elementos del formulario. */
+    padding: 30px;
+    
+    /* border-radius: Redondea las esquinas del contenedor rectangular dándole un aspecto moderno (tipo tarjeta o modal). */
+    border-radius: 10px;
+    
+    /* box-shadow: Genera una sombra difuminada alrededor de toda la tarjeta, dándole un efecto de elevación. */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* width: 100%; El contenedor ocupa el ancho disponible de su padre. */
+    width: 100%;
+    
+    /* max-width: Limita el ancho máximo a 400px; evita que el formulario se estire demasiado en pantallas de computadoras grandes. */
+    max-width: 400px;
+    
+    /* box-sizing: border-box; 💡 ¡MUY IMPORTANTE! Hace que el padding y los bordes se incluyan DENTRO del ancho máximo de 400px, evitando que se deforme o rompa el diseño. */
+    box-sizing: border-box;
+    
+    /* margin-bottom: Espacio de separación exterior inferior. */
+    margin-bottom: 20px;
+}
+
+/* Clase aplicada directamente a la etiqueta <form> para ordenar sus campos
+*/
+.form {
+    /* display: flex; Convierte al formulario en un contenedor flexible. */
+    display: flex;
+    
+    /* flex-direction: column; Apila todos los elementos hijos (inputs, selects, labels, botones) de forma vertical, uno debajo del otro. */
+    flex-direction: column;
+    
+    /* gap: 15px; Define un espacio de separación uniforme exacto de 15 píxeles entre cada elemento interno del formulario. ¡Te ahorra poner márgenes individuales! */
+    gap: 15px;
+}
+
+
+/* ==========================================================
+   3. ETIQUETAS, CAMPOS DE TEXTO, NÚMEROS Y SELECTS
+   ========================================================== */
+
+/* Estilo para los textos descriptivos, etiquetas de campos y spans
+*/
+span, label {
+    /* font-weight: 600; Pone el texto en semi-negrita para que destaque mejor y sea legible. */
+    font-weight: 600;
+    
+    /* font-size: 14px; Define un tamaño de letra adecuado y profesional para las etiquetas. */
+    font-size: 14px;
+    
+    /* color: Da un color gris oscuro al texto de las etiquetas (evita el negro puro que suele cansar la vista). */
+    color: #495057;
+}
+
+/* Estilo unificado para los campos donde el usuario escribe o selecciona datos
+*/
+input[type="text"],
+input[type="number"],
+select {
+    /* width: 100%; Hace que cada campo ocupe todo el ancho disponible del contenedor del formulario. */
+    width: 100%;
+    
+    /* padding: 10px; Añade espacio de relleno interior dentro del cuadro de texto para que el texto que escriba el usuario no quede pegado a los bordes. */
+    padding: 10px;
+    
+    /* border: Define un borde sólido de 1 píxel con un color gris claro. */
+    border: 1px solid #ced4da;
+    
+    /* border-radius: Redondea ligeramente las esquinas de los inputs y selects. */
+    border-radius: 6px;
+    
+    /* font-size: Tamaño del texto que escribirá el usuario dentro del input. */
+    font-size: 14px;
+    
+    /* box-sizing: border-box; Vital para que el padding interno no expanda el ancho del input fuera de su contenedor. */
+    box-sizing: border-box;
+    
+    /* transition: border-color 0.2s; Hace que el cambio de color del borde al hacer clic sea suave y animado (no brusco). */
+    transition: border-color 0.2s;
+}
+
+/* Efecto visual cuando el usuario hace clic o selecciona un input (:focus)
+*/
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    /* border-color: Cambia el color del borde a un azul brillante al interactuar. */
+    border-color: #007bff;
+    
+    /* outline: none; Elimina el borde o resplandor predeterminado y feo que los navegadores le ponen por defecto a los inputs al seleccionarlos. */
+    outline: none;
+    
+    /* box-shadow: Agrega un resplandor o sombra suave alrededor del input enfocado para indicar visualmente dónde está escribiendo el usuario. */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+
+/* ==========================================================
+   4. BOTONES DE ENVÍO Y ACCIÓN
+   ========================================================== */
+
+/* Estilo general para los botones de tipo submit del formulario
+*/
+button[type="submit"] {
+    /* background-color: Pinta el fondo del botón de color verde amigable (indica acción positiva de enviar/guardar). */
+    background-color: #28a745;
+    
+    /* color: Pone el texto del botón en blanco para que resalte. */
+    color: white;
+    
+    /* border: none; Elimina los bordes predeterminados que le pone el navegador a los botones. */
+    border: none;
+    
+    /* padding: 12px; Relleno interno superior, inferior, izquierdo y derecho para darle un tamaño cómodo de presionar. */
+    padding: 12px;
+    
+    /* font-size: 16px; Tamaño de la letra del botón, un poco más grande para darle jerarquía. */
+    font-size: 16px;
+    
+    /* font-weight: bold; Pone el texto del botón en negrita. */
+    font-weight: bold;
+    
+    /* border-radius: Redondea las esquinas del botón. */
+    border-radius: 6px;
+    
+    /* cursor: pointer; Cambia el cursor del mouse a una mano señaladora cuando se pasa por encima del botón. */
+    cursor: pointer;
+    
+    /* transition: background-color 0.2s; Suaviza el cambio de color al pasar el mouse por encima. */
+    transition: background-color 0.2s;
+    
+    /* margin-top: 10px; Añade un pequeño margen extra en la parte superior para separarlo del campo anterior. */
+    margin-top: 10px;
+}
+
+/* Efecto visual al pasar el mouse por encima del botón (:hover)
+*/
+button[type="submit"]:hover {
+    /* background-color: Oscurece ligeramente el tono del verde para dar feedback visual de que el mouse está encima. */
+    background-color: #218838;
+}
