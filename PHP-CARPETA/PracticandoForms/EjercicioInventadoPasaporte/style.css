@@ -1,0 +1,196 @@
+#tituloPagPrincipal{
+    text-align: center;
+}
+
+/* --- 1. Estilo General del Header --- */
+.encabezado {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    border-bottom: 2px solid #e1e4e8; /* Línea sutil abajo para separar del contenido */
+    padding: 12px 24px; /* Espacio interno arriba/abajo y a los lados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); /* Sombra suave flotante */
+    position: sticky; /* Mantiene el header fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box; /* Evita que el padding rompa el ancho total */
+}
+
+/* --- 2. Acomodando el Formulario con Flexbox --- */
+.encabezado .formHeader {
+    display: flex; /* Convierte el form en un contenedor flexible */
+    justify-content: flex-end; /* Alinea los botones hacia la derecha (puedes cambiarlo a 'center' si los preferís centrados) */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 15px; /* ¡La clave para la distancia! Separa los botones automáticamente sin usar márgenes manuales */
+    max-width: 1200px;
+    margin: 0 auto; /* ¡Esto centra los botones en el medio de la pantalla! */
+}
+
+/* --- 3. Dándole diseño "lindo" a los Botones --- */
+.encabezado .formHeader button {
+    background-color: #f1f3f5; /* Color de fondo inicial (gris suave moderno) */
+    color: #495057; /* Color del texto del botón */
+    border: 1px solid #ced4da; /* Borde sutil */
+    padding: 8px 16px; /* Relleno interno para que el botón no quede apretado */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Suaviza la animación cuando pasas el mouse */
+}
+
+/* Efecto Hover (cuando el usuario pasa el mouse por encima) */
+.encabezado .formHeader button:hover {
+    background-color: #3498db; /* Cambia a un color azul lindo */
+    color: #ffffff; /* Texto blanco */
+    border-color: #2980b9;
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Opcional: Si querés destacar un botón en particular (por ejemplo, el de cerrar sesión de otro color) */
+/* Podrías asignarle una clase específica en el HTML, ej: <button name="btnCerrarSesion" class="btn-rojo"> */
+
+body{
+    background-color: rgb(252, 252, 252);
+}
+
+#tituloSesion{
+    text-align: center;
+    font-style: inherit;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.seccionSesion{
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+
+.formSesion,.formDashboard{
+    margin-left: 30%;
+    margin-right: 35%;
+    margin-top: 3%;
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.formSesion input{
+    border: 1px solid rgb(17, 17, 16);
+    margin-right: 25%;
+    margin-left: 25%;
+    width: auto;
+}
+
+.formSesion label{
+    text-align: center;
+}
+
+.formSesion button{
+    background-color: yellow;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 6px;
+}
+
+
+
+
+.paginaInicioSesion, .paginaDashboard{
+    background-color: rgb(248, 248, 248);
+}
+
+footer{
+    background-color: rgb(14, 12, 12);
+    color: white;
+}
+
+article {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    
+    /* Creamos una grilla automática: se acomodan en columnas de mínimo 300px */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* */
+    gap: 20px; /* Distancia perfecta entre cada tarjeta de pasaporte */
+
+    /* 5. GRILLA AUTOMÁTICA Y ADAPTABLE (IDEAL PARA PASAPORTES / TARJETAS EN PHP):
+      - display: grid;: Activa el sistema de grillas.
+      - grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));:
+        * repeat(): Repite la regla de columnas automáticamente.
+        * auto-fit: Calcula cuántas columnas entran según el ancho de pantalla.
+        * minmax(300px, 1fr): Cada tarjeta medirá como mínimo 300px, y si sobra 
+          espacio, se estirará de forma equitativa (1fr). ¡Crea un diseño 
+          responsivo sin usar media queries!
+      - gap: 20px;: Distancia perfecta entre cada tarjeta generada por el foreach.
+*/
+}
+
+/* --- 2. Estética de Cada Tarjeta de Pasaporte --- */
+.pasaporte {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px; /* Bordes redondeados modernos */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra flotante suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* Simulamos el borde izquierdo de un documento oficial */
+    border-left: 5px solid #3498db; 
+}
+
+/* Efecto hover al pasar el mouse por encima de la tarjeta */
+.pasaporte:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* --- 3. Tipografía y Textos dentro de la Tarjeta --- */
+.pasaporte h3 {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #f1f3f5; /* Línea divisoria sutil entre datos */
+    padding-bottom: 6px;
+}
+
+/* Estilo para la lista de métodos de pago dentro de la tarjeta */
+.pasaporte .lista-pagos {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pasaporte .lista-pagos li {
+    margin-bottom: 4px;
+}
+
+/* Destacar de forma especial el Código de Verificación al final */
+.pasaporte h3:last-child {
+    background-color: #f8f9fa;
+    color: #2980b9;
+    padding: 8px;
+    border-radius: 4px;
+    border-bottom: none;
+    text-align: center;
+    font-family: monospace; /* Tipo de letra estilo sistema/código */
+    font-size: 1.1rem;
+}
+
+#tituloPagPrincipal{
+    font-family:monospace;
+    color: #7c8076;
+    text-shadow: #7c8076;
+}

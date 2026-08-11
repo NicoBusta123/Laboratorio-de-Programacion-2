@@ -11,21 +11,21 @@ if (isset($_POST['btnReimprimir'])){
         foreach ($_SESSION['tickets'] as $ticket) {
 
            if($ticket['documento'] == $_POST['documento']) {
-            echo "<h3>Nombre: ".$ticket['nombre']."</h3>";
-            echo "<h3>Apellido: ".$ticket['apellido']."</h3>";
-            echo "<h3>Documento: ".$ticket['documento']."</h3>";
-            echo "<h3>Factura: ".$ticket['factura']."</h3>";
-            echo "<h3>Fecha de alta: ".$ticket['fechaAlta']."</h3>";
-            echo "<h3>Vehiculo: ".$ticket['vehiculo']."</h3>";
-            echo "<h3>Servicios: </h3>";
-            foreach ($ticket['servicios'] as $servicio) {
-                echo "<h3>".$servicio."</h3>";
-            }
-            echo "<h3>Pagos: </h3>";
-            foreach ($ticket['pago'] as $pago) {
-                echo "<h3>".$pago."</h3>";
-            }
-            echo "<h3>Total: ".$ticket['total']."</h3>";
+              echo "<h3>Nombre: ".$ticket['nombre']."</h3>";
+              echo "<h3>Apellido: ".$ticket['apellido']."</h3>";
+              echo "<h3>Documento: ".$ticket['documento']."</h3>";
+              echo "<h3>Factura: ".$ticket['factura']."</h3>";
+              echo "<h3>Fecha de alta: ".$ticket['fechaAlta']."</h3>";
+              echo "<h3>Vehiculo: ".$ticket['vehiculo']."</h3>";
+              echo "<h3>Servicios: </h3>";
+              foreach ($ticket['servicios'] as $servicio) {
+                  echo "<h3>".$servicio."</h3>";
+              }
+              echo "<h3>Pagos: </h3>";
+              foreach ($ticket['pago'] as $pago) {
+                  echo "<h3>".$pago."</h3>";
+              }
+              echo "<h3>Total: ".$ticket['total']."</h3>";
 
            }
         }
