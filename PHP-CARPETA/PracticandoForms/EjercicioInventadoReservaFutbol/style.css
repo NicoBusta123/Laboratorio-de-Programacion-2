@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(243, 242, 242);
+}
+
+#tituloInicioSesion{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.articuloForm, .seccionForm{
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 15px;
+    margin-right: 30%;
+    margin-left: 25%;
+}
+
+.formSesion, .formDashboard{
+    gap: 15px;
+    padding: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    align-items: center;
+    background-color: white;
+    font-size: larger;
+}
+
+input{
+    border: 1px solid rgb(17, 17, 16);
+    width: auto;
+}
+
+.formSesion button {
+    border-radius: 6px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.encabezado{
+    width: 100%;
+    background-color: rgb(230, 221, 221);
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.encabezado .formEncabezado{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10%;
+    gap: 15px;
+}
+
+.formEncabezado button{
+    border-radius: 5px;
+    background-color: rgb(250, 248, 248);
+    width: 10%;
+}
+
+#tituloReservar{
+    text-align: center;
+    font-size:xx-large;
+}
+
+.seccionReservas{
+    max-width: 1100px;
+    margin:30px auto;
+    padding: 0 20px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.reserva {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px; /* Bordes redondeados modernos */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra flotante suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* Simulamos el borde izquierdo de un documento oficial */
+    border-left: 5px solid #3498db; 
+}
